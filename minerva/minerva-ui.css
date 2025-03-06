@@ -1,0 +1,30 @@
+.minerva-ui{
+    display: flex;
+}
+#minerva-editor{
+    padding: 10px;
+    width: 100%;
+    background-color: white;
+    border: 1px dotted #222;
+}
+#minerva-editor div{
+    border: 1px dotted #ccc;
+}
+#minerva-editor div:hover{
+    opacity: .3;
+    background-color: mediumpurple;
+    cursor: pointer;
+}
+
+#minerva-blocks{
+    padding: 20px;
+    width: 300px;
+    height: 100%;
+}
+
+#minerva-go{
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 30px;
+    padding: 30px;
+}
