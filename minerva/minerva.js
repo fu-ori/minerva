@@ -1,5 +1,5 @@
 function minervaModal() {
-    let elements = document.querySelectorAll("#minerva-editor div");
+    let elements = document.querySelectorAll("#minerva-stage div");
     elements.forEach(element => {
         element.addEventListener("click", function() {
             let newText = prompt("Editarxxx conteúdo:", this.innerHTML);
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     minervaModal();
 
     let blocks = document.querySelectorAll(".draggable-block");
-    let editor = document.getElementById("minerva-editor");
+    let editor = document.getElementById("minerva-stage");
 
     // Permitir soltar elementos no editor
     editor.addEventListener("dragover", function(e) {

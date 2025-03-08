@@ -1,61 +1,47 @@
 <?php
 
-add_filter('use_block_editor_for_post', '__return_false', 10);
-
 include 'minerva/functions/remove-wordpress-ui.php';
-include 'minerva/functions/minerva-cta.php';
-
-
-// ██████████████████████████████████████████████ minerva admin menu
-function minerva_create_builder_page() {
-    add_menu_page(
-        'Minerva',
-        'Minerva',  
-        'edit_pages',
-        'minerva',
-        'minerva_ui',
-        'dashicons-admin-generic',
-        20
-    );
-}
-add_action('admin_menu', 'minerva_create_builder_page');
-
-
-
-// Adiciona as ações do WordPress para processar o AJAX
-add_action('wp_ajax_save_minerva_content', 'minerva_save_content');
+include 'minerva/functions/minerva-menus.php';
+include 'minerva/functions/wordpress-ajax.php';
+include 'minerva/functions/phosphor-icons.php';
 
 // ██████████████████████████████████████████████
 
-// save the content
+// minerva creator UI
 
 // ██████████████████████████████████████████████
+add_filter('use_block_editor_for_post', '__return_false', 10);
+function minerva_ui() 
+{
 
-function minerva_save_content() {
-    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'minerva_save_content')) {
-        wp_send_json_error(['message' => 'Nonce inválido.']);
+    // defaults
+    if (!isset($_GET['post_id'])) {
+        echo '<h2>Erro: Nenhuma página selecionada.</h2>';
         return;
     }
-    if (!current_user_can('edit_pages')) {
-        wp_send_json_error(['message' => 'Sem permissão para editar.']);
-        return;
-    }
-    $post_id = intval($_POST['post_id']);
-    $content = wp_kses_post($_POST['content']);
-    if (update_post_meta($post_id, '_minerva_content', $content)) {
-        wp_send_json_success(['message' => 'Conteúdo salvo com sucessxxxo!']);
-    } else {
-        wp_send_json_error(['message' => 'Erro ao salvar o conteúdo.']);
-    }
+    $post_id = intval($_GET['post_id']);
+    $minerva_content = get_post_meta($post_id, '_minerva_content', true);
+
+    // minerva blocks and stage
+    echo '<div class="minerva-ui">';
+    echo '<div id="minerva-stage">' . (!empty($minerva_content) ? $minerva_content : '') . '</div>';
+    echo '<div id="minerva-blocks">
+    <ul>
+    <li class="draggable-block" draggable="true" data-content="<p>Novo Parágrafo</p>">Parágrafo</li>
+    <li class="draggable-block" draggable="true" data-content="<h2>Título Novo</h2>">Título</li>
+    </ul>
+    </div>';
+    echo '</div><button id="minerva-go">publicar</button>';
+
+    // add scripts and ajax
+    wp_enqueue_style('minerva-ui', get_template_directory_uri() . '/minerva/minerva-ui.css?v01', array(), null, 'all');
+    wp_enqueue_script('minerva', get_template_directory_uri() . '/minerva/minerva.js?v01', array('jquery'), null, true);
+    wp_localize_script('minerva', 'minervaData', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'post_id'  => $post_id,
+        'nonce'    => wp_create_nonce('minerva_save_content')
+    ));
+
 }
-
-
-// ██████████████████████████████████████████████
-
-// minerva UI
-
-// ██████████████████████████████████████████████
-
-include 'minerva.php';
 
 ?>
