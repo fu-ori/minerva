@@ -1,17 +1,20 @@
 /*********************************************
 
-MINERVA GO
+DEFAULTS
 
 *********************************************/
-.minerva-ui{
-    display: flex;
-}
-#minerva-go{
-    cursor: pointer;
+button{ cursor: pointer; }
+#wpbody-content{ width: 100% !important; }
+h1, h2, h3, h4, h5{ margin: 0; }
+p{ margin: 0; }
+
+#minerva-nav{
+    width: 100%;
     position: fixed;
-    right: 10px;
-    top: 10px;
-    padding: 30px;
+    bottom: 0px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
 }
 
 /*********************************************
@@ -21,7 +24,6 @@ STAGE
 *********************************************/
 #minerva-stage{
     padding: 10px;
-    width: 100%;
     background-color: white;
     border: 1px dotted #222;
 }
@@ -40,6 +42,7 @@ BLOCKS
 
 *********************************************/
 #minerva-blocks{
+    display: none;
     padding: 20px;
     width: 300px;
     height: 100%;

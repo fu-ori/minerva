@@ -1,8 +1,22 @@
+// █████████████████████████████ MINERVA INIT
+
+jQuery(document).ready(function ($) {
+    // creator UI
+    $("#minerva-design").click(function () {
+        $("#minerva-blocks").slideToggle();
+    });
+    
+    // MODALS
+    minervaModal();
+});
+
+// ████████████████████████████████████████████████████████
+
 function minervaModal() {
     let elements = document.querySelectorAll("#minerva-stage div");
     elements.forEach(element => {
         element.addEventListener("click", function() {
-            let newText = prompt("Editarxxx conteúdo:", this.innerHTML);
+            let newText = prompt("contentxx:", this.innerHTML);
             if (newText !== null) {
                 this.innerHTML = newText;
             }
@@ -11,7 +25,6 @@ function minervaModal() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    minervaModal();
 
     let blocks = document.querySelectorAll(".draggable-block");
     let editor = document.getElementById("minerva-stage");

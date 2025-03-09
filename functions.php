@@ -1,15 +1,13 @@
 <?php
 
-include 'minerva/functions/remove-wordpress-ui.php';
-include 'minerva/functions/minerva-menus.php';
-include 'minerva/functions/wordpress-ajax.php';
-include 'minerva/functions/phosphor-icons.php';
+include 'ai/functions/custom-css.php';
+include 'ai/functions/remove-wordpress-ui.php';
+include 'ai/functions/minerva-menus.php';
+include 'ai/functions/wordpress-ajax.php';
+include 'ai/functions/phosphor-icons.php';
 
-// ██████████████████████████████████████████████
+// ████████████████████████████ CREATOR UI
 
-// minerva creator UI
-
-// ██████████████████████████████████████████████
 add_filter('use_block_editor_for_post', '__return_false', 10);
 function minerva_ui() 
 {
@@ -23,7 +21,6 @@ function minerva_ui()
     $minerva_content = get_post_meta($post_id, '_minerva_content', true);
 
     // minerva blocks and stage
-    echo '<div class="minerva-ui">';
     echo '<div id="minerva-stage">' . (!empty($minerva_content) ? $minerva_content : '') . '</div>';
     echo '<div id="minerva-blocks">
     <ul>
@@ -31,11 +28,14 @@ function minerva_ui()
     <li class="draggable-block" draggable="true" data-content="<h2>Título Novo</h2>">Título</li>
     </ul>
     </div>';
-    echo '</div><button id="minerva-go">publicar</button>';
+    echo '<ul id="minerva-nav">
+    <li><button id="minerva-design"><i class="ph ph-circles-three-plus"></i></button></li>
+    <li><button id="minerva-go"><i class="ph ph-cloud-arrow-up"></i></button></li>
+    </ul>';
 
     // add scripts and ajax
-    wp_enqueue_style('minerva-ui', get_template_directory_uri() . '/minerva/minerva-ui.css?v01', array(), null, 'all');
-    wp_enqueue_script('minerva', get_template_directory_uri() . '/minerva/minerva.js?v01', array('jquery'), null, true);
+    wp_enqueue_style('minerva-ui', get_template_directory_uri() . '/ai/minerva.css', array(), rand(), 'all');
+    wp_enqueue_script('minerva', get_template_directory_uri() . '/ai/minerva.js', array('jquery'), rand(), 'null, true');
     wp_localize_script('minerva', 'minervaData', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'post_id'  => $post_id,
@@ -43,5 +43,7 @@ function minerva_ui()
     ));
 
 }
+
+// ████████████████████████████████████████████████████████
 
 ?>
