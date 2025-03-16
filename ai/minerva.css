@@ -3,11 +3,8 @@
 DEFAULTS
 
 *********************************************/
-button{ cursor: pointer; }
-#wpbody-content{ width: 100% !important; }
-h1, h2, h3, h4, h5{ margin: 0; }
-p{ margin: 0; }
-
+#wp-auth-check-wrap{ display: none !important; }
+#adminmenumain{ display: none !important; }
 #minerva-nav{
     width: 100%;
     position: fixed;
@@ -24,15 +21,13 @@ STAGE
 *********************************************/
 #minerva-stage{
     padding: 10px;
-    background-color: white;
-    border: 1px dotted #222;
 }
 #minerva-stage div{
     border: 1px dotted #ccc;
 }
 #minerva-stage div:hover{
     opacity: .3;
-    background-color: mediumpurple;
+    background-color: orange;
     cursor: pointer;
 }
 

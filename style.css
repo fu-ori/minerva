@@ -4,7 +4,7 @@ Theme URI: https://fuoricorp.com
 Author: FU-ORI
 Author URI: https://fuoricorp.com
 Description: A WordPress theme with an integrated page builder and art generator
-Version: 0.3
+Version: 0.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fuori, page-builder, elementor
@@ -24,6 +24,15 @@ Text Domain: fuori, page-builder, elementor
     --color4: #383a67;
     --color5: #943990;
 }
+
+/*********************************************
+
+DEFAULTS
+
+*********************************************/
+body{
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
 footer{
     width: 100%;
     text-align: center;
@@ -32,3 +41,9 @@ footer p{
     font-size: 10px !important;
     text-transform: uppercase !important;
 }
+
+/*********************************************
+
+SINGLE
+
+*********************************************/
