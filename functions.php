@@ -1,12 +1,12 @@
 <?php
 
 include 'ai/functions/custom-css.php';
-include 'ai/functions/remove-wordpress-ui.php';
-include 'ai/functions/minerva-menus.php';
-include 'ai/functions/wordpress-ajax.php';
 include 'ai/functions/phosphor-icons.php';
+include 'ai/functions/wordpress-ui.php';
+include 'ai/functions/wordpress-minerva.php';
+include 'ai/functions/wordpress-ajax.php';
 
-// ████████████████████████████ CREATOR UI
+// ████████████████████████████ Page Builder
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 function minerva_ui() 
