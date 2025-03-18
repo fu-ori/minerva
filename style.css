@@ -1,41 +1,46 @@
 /*
 Theme Name: Minerva
-Theme URI: https://fuoricorp.com
+Theme URI: https://fuoricorp.com/minerva
 Author: FU-ORI
 Author URI: https://fuoricorp.com
 Description: A WordPress theme with an integrated page builder and art generator
-Version: 0.5
+Version: 0.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: fuori, page-builder, elementor
+Text Domain: fuori, page-builder, elementor, art generator
 */
-
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --color1: #f7aa21;
-    --color2: #15a099;
-    --color3: #187abb;
-    --color4: #383a67;
-    --color5: #943990;
-}
 
 /*********************************************
 
 DEFAULTS
 
 *********************************************/
-body{
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+:root {    
+    --brown-dark: #47403c;
+    --brown-medium: #5b524c;
+    --beige: #cea586;
+    --green: #9ba774;
+}
+
 footer{
     width: 100%;
-    text-align: center;
+    text-align: right;
+    padding-right: 5%;
+}
+footer a{
+    color: var(--brown-dark) !important;
+    transition: color 0.5s ease-in-out;
+    font-weight: bold;
+    text-decoration: underline;
+}
+footer a:hover{
+    color: var(--green) !important;
 }
 footer p{
     font-size: 10px !important;
@@ -47,3 +52,15 @@ footer p{
 SINGLE
 
 *********************************************/
+#single .tag{
+    font-size: 10px;
+    text-transform: uppercase;
+}
+#single .tag a{
+    color: var(--brown-dark) !important;
+    transition: color 0.5s ease-in-out;
+    text-decoration: underline;
+}
+#single .tag a:hover{
+    color: var(--green) !important;
+}
