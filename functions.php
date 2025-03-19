@@ -22,14 +22,14 @@ function minerva_ui()
 
     // minerva blocks and stage
     echo '<div id="minerva-stage">' . (!empty($minerva_content) ? $minerva_content : '') . '</div>';
-    echo '<div id="minerva-blocks">
+    echo '<div id="minerva-allblocks">
     <ul>
     <li class="draggable-block" draggable="true" data-content="<p>Novo Parágrafo</p>">Parágrafo</li>
     <li class="draggable-block" draggable="true" data-content="<h2>Título Novo</h2>">Título</li>
     </ul>
     </div>';
     echo '<ul id="minerva-nav">
-    <li><button id="minerva-design"><i class="ph ph-circles-three-plus"></i></button></li>
+    <li><button id="minerva-blocks"><i class="ph ph-circles-three-plus"></i></button></li>
     <li><button id="minerva-go"><i class="ph ph-cloud-arrow-up"></i></button></li>
     </ul>';
 

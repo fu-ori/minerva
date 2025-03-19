@@ -2,8 +2,8 @@
 
 jQuery(document).ready(function ($) {
     // creator UI
-    $("#minerva-design").click(function () {
-        $("#minerva-blocks").slideToggle();
+    $("#minerva-blocks").click(function () {
+        $("#minerva-allblocks").slideToggle();
     });
     
     // MODALS

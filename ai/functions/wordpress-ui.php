@@ -19,7 +19,7 @@ add_action('admin_head', 'remove_wordpress_ui');
 
 function fix_wpadmincolor() {
     $user_id = get_current_user_id();
-    update_user_meta($user_id, 'admin_color', 'coffee');
+    update_user_meta($user_id, 'admin_color', 'light'); 
 }
 add_action('admin_init', 'fix_wpadmincolor');
 
