@@ -3,7 +3,16 @@
     <head>
         <?php wp_head(); ?>
 
-        <title><?php wp_title('•', true, 'right'); ?></title>
+        <title>
+            <?php
+            if (is_front_page() || is_home()) {
+                echo get_bloginfo('name') . ' • ' . get_bloginfo('description');
+            } else {
+                echo wp_title('•', true, 'right') . get_bloginfo('name');
+            }
+            ?>
+        </title>
+
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
