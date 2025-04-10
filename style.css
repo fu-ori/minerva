@@ -4,7 +4,7 @@ Theme URI: https://fuoricorp.com/minerva
 Author: FU-ORI
 Author URI: https://fuoricorp.com
 Description: A WordPress theme with an integrated page builder 
-Version: 0.8
+Version: 0.9
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fuori, page-builder, elementor, art generator
@@ -19,14 +19,6 @@ DEFAULTS
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {    
-    --color1: #b0acb0;
-    --color2: #e2dddf;
-    --color3: #05d9e8;
-    --color4: #005678;
-    --color5: #01012b;
 }
 
 .clear10x{  height: 10px !important; }

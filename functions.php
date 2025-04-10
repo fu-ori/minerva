@@ -22,14 +22,22 @@ function minerva_ui()
 
     // minerva blocks and stage
     echo '<div id="minerva-stage">' . (!empty($minerva_content) ? $minerva_content : '') . '</div>';
-    
+
     echo '<div id="minerva-allblocks">
+    <p>Text</p>
     <ul>
     <li class="draggable-block" draggable="true" data-content="<p>Novo Parágrafo</p>"><i class="ph ph-paragraph"></i> Parágrafo</li>
     <li class="draggable-block" draggable="true" data-content="<h2>Título xNovo</h2>"><i class="ph ph-text-aa"></i> Título</li>
+    <li class="draggable-block" draggable="true" data-content="<h2>Título xNovo</h2>"><i class="ph ph-text-aa"></i> Título</li>
+    </ul>
+
+    <ul>
+    <li class="draggable-block" draggable="true" data-content="<p>Novo Parágrafo</p>"><i class="ph ph-paragraph"></i> Parágrafo</li>
+    <li class="draggable-block" draggable="true" data-content="<h2>Título xNovo</h2>"><i class="ph ph-text-aa"></i> Título</li>
+    <li class="draggable-block" draggable="true" data-content="<h2>Título xNovo</h2>"><i class="ph ph-text-aa"></i> Título</li>
     </ul>
     </div>';
-    
+
     echo '<ul id="minerva-nav">
     <li><button id="minerva-blocks"><i class="ph ph-circles-three-plus"></i></button></li>
     <li><button id="minerva-go"><i class="ph ph-cloud-arrow-up"></i></button></li>
