@@ -3,8 +3,12 @@
 DEFAULTS
 
 *********************************************/
+body, html{
+    background-color: #fff;
+}
 #wp-auth-check-wrap{ display: none !important; }
 #adminmenumain{ display: none !important; }
+
 #minerva-nav{
     width: 100%;
     position: fixed;
@@ -12,6 +16,18 @@ DEFAULTS
     text-align: center;
     display: inline-flex;
     justify-content: center;
+}
+#minerva-nav li{
+    margin-right: 1px;
+    margin-bottom: 10px;
+}
+#minerva-nav li button i{
+    padding: 10px;
+    background-color: aqua;
+    color: black;
+    font-size: 30px !important;
+    border-radius: 20px;
+    border: 1px solid cyan;
 }
 
 /*********************************************
@@ -27,7 +43,8 @@ STAGE
 }
 #minerva-stage div:hover{
     opacity: .3;
-    background-color: orange;
+    color: black !important;
+    background-color: aqua;
     cursor: pointer;
 }
 
@@ -37,7 +54,26 @@ BLOCKS
 
 *********************************************/
 #minerva-allblocks{
+    position: fixed;
+    top: 0;
+    right: 0;
     padding: 20px;
     width: 300px;
     height: 100%;
+    background-color: #222;
+}
+#minerva-allblocks ul{
+    display: inline-flex;
+}
+#minerva-allblocks ul li{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    cursor: pointer;
+}
+#minerva-allblocks ul li i{
+    font-size: 40px;
 }

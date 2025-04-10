@@ -3,8 +3,8 @@ Theme Name: Minerva
 Theme URI: https://fuoricorp.com/minerva
 Author: FU-ORI
 Author URI: https://fuoricorp.com
-Description: A WordPress theme with an integrated page builder and art generator
-Version: 0.7
+Description: A WordPress theme with an integrated page builder 
+Version: 0.8
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fuori, page-builder, elementor, art generator
@@ -22,16 +22,51 @@ DEFAULTS
 }
 
 :root {    
-    --brown-dark: #47403c;
-    --brown-medium: #5b524c;
-    --beige: #cea586;
-    --green: #9ba774;
+    --color1: #b0acb0;
+    --color2: #e2dddf;
+    --color3: #05d9e8;
+    --color4: #005678;
+    --color5: #01012b;
 }
 
+.clear10x{  height: 10px !important; }
+.clear20x{  height: 20px !important; }
+.clear30x{  height: 30px !important; }
+.clear40x{  height: 40px !important; }
+.clear50x{  height: 50px !important; }
+.clear60x{  height: 60px !important; }
+.clear70x{  height: 70px !important; }
+.clear80x{  height: 80px !important; }
+.clear90x{  height: 90px !important; }
+.clear100x{ height: 100px !important; }
+
+.fine{
+    font-weight: 300 !important;
+}
+
+/*********************************************
+
+INDEX
+
+*********************************************/
+#index img{
+    border-radius: 20px;
+}
+#index small{
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+/*********************************************
+
+FOOTER
+
+*********************************************/
 footer{
     width: 100%;
     text-align: right;
     padding-right: 5%;
+    margin-bottom: 20px;
 }
 footer a{
     color: var(--brown-dark) !important;

@@ -1,16 +1,12 @@
-// █████████████████████████████ MINERVA INIT
-
 jQuery(document).ready(function ($) {
     // creator UI
     $("#minerva-blocks").click(function () {
         $("#minerva-allblocks").slideToggle();
     });
-    
+
     // MODALS
     minervaModal();
 });
-
-// ████████████████████████████████████████████████████████
 
 function minervaModal() {
     let elements = document.querySelectorAll("#minerva-stage div");

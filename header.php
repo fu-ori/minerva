@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> data-theme="light">
     <head>
         <?php wp_head(); ?>
 
@@ -16,6 +16,6 @@
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/engine/bulma-1.0.2.css">
     </head>
     <body <?php body_class(); ?>>
